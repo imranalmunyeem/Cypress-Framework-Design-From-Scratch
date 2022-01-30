@@ -5,6 +5,26 @@
 
     "env":{
         "registrationUrl":"https://demo.nopcommerce.com/register?",
-        "loginUrl": "https://demo.nopcommerce.com/login"
+        "loginUrl": "https://demo.nopcommerce.com/login",
+        
+        "desktopsUrl":"https://demo.nopcommerce.com/desktops",
+        "notebooksUrl":"https://demo.nopcommerce.com/notebooks",
+        "softwareUrl": "https://demo.nopcommerce.com/software",
+
+        "cameraphotoUrl":"https://demo.nopcommerce.com/camera-photo",
+        "cellphonesUrl":"https://demo.nopcommerce.com/cell-phones",
+        "othersUrl":"https://demo.nopcommerce.com/others",
+
+        "shoesUrl":"https://demo.nopcommerce.com/shoes",
+        "clothingsUrl":"https://demo.nopcommerce.com/clothing",
+        "accessoriesUrl":"https://demo.nopcommerce.com/accessories",
+
+        "digitaldownloadUrl":"https://demo.nopcommerce.com/digital-downloads",
+
+        "booksUrl":"https://demo.nopcommerce.com/books",
+
+        "jewelryUrl":"https://demo.nopcommerce.com/jewelry",
+
+        "giftscardUrl":"https://demo.nopcommerce.com/gift-cards"
     }
 }

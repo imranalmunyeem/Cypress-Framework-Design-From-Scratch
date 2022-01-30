@@ -8,6 +8,7 @@ class SearchPO{
 
     clickOnSearch(){
         const searchButton = cy.get('#small-search-box-form > .button-1');
+        searchButton.should('be.visible');
         searchButton.click();
     }
 }
