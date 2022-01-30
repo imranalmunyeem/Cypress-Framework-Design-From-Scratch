@@ -14,12 +14,15 @@ describe('Registration', () => {
     registerpo.inputFirstName('Automation');
     registerpo.inputLasttName('Tester');
     registerpo.inputDateOfBrith('25', '12', '1995');
-    registerpo.inputEmail('tester@mailinator')
+    registerpo.inputEmail('nforget32@gmail.com')
     registerpo.inputCompany('Test Company');
     registerpo.uncheckNewsletter();
     //registerpo.checkNewsletter();
-    registerpo.inputPassword('test12345', 'test12345');
+    registerpo.inputPassword('123456', '123456');
     registerpo.clickOnRegister();
+
+    const successMessage = cy.get('body > div.master-wrapper-page > div.master-wrapper-content > div > div > div > div.page-body > div.result');
+    successMessage.should('contain','Your registration completed');
   })
 
   })

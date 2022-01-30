@@ -79,7 +79,7 @@ class RegisterPO{
     }
 
     clickOnRegister(){
-        const registerField = cy.get('#register-button');
+        const registerField = cy.get('#register-button')
         registerField.should('be.visible');
         registerField.click();
     }
