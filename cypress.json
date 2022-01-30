@@ -1,0 +1,8 @@
+{
+    "baseUrl": "https://demo.nopcommerce.com/",
+
+    "env":{
+        "registrationUrl":"https://demo.nopcommerce.com/register?",
+        "loginUrl": "https://demo.nopcommerce.com/login"
+    }
+}
