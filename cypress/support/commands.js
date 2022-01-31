@@ -1,3 +1,4 @@
+//.....................................Login Command.......................................................//
 Cypress.Commands.add('login', (email, password) => {
     cy.visit(Cypress.env('loginUrl'));
     cy.url().should('include','login');
@@ -18,19 +19,20 @@ Cypress.Commands.add('login', (email, password) => {
 
 })
 
+
+//.....................................Logout Command.......................................................//
 Cypress.Commands.add('logout', ()=>{
     const clickOnLogout = cy.get('.ico-logout');
     clickOnLogout.should('be.visible');
     clickOnLogout.click();
 })
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+//.....................................Product Number Counter Command.......................................//
+Cypress.Commands.add('productcounter',()=>{
+cy.get('.item-grid').find('.product-item').then(list => {
+    const productCount = Cypress.$('.product-item').length;
+    expect(list).to.have.length(productCount);
+   });
+});
+
