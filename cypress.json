@@ -25,6 +25,11 @@
 
         "jewelryUrl":"https://demo.nopcommerce.com/jewelry",
 
-        "giftscardUrl":"https://demo.nopcommerce.com/gift-cards"
+        "giftscardUrl":"https://demo.nopcommerce.com/gift-cards",
+
+        "facebookUrl": "https://www.facebook.com/nopCommerce",
+        "twitterUrl": "https://twitter.com/nopCommerce",
+        "rssUrl": "https://demo.nopcommerce.com/news/rss/1",
+        "youtubeUrl": "https://www.youtube.com/user/nopCommerce"
     }
 }

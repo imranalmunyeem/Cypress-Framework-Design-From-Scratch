@@ -20,7 +20,7 @@ Cypress.Commands.add('login', (email, password) => {
 })
 
 
-//.....................................Logout Command.......................................................//
+//........................................Logout Command.......................................................//
 Cypress.Commands.add('logout', ()=>{
     const clickOnLogout = cy.get('.ico-logout');
     clickOnLogout.should('be.visible');
