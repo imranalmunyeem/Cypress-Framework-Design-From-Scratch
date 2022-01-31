@@ -1,9 +1,14 @@
 ///<reference types = 'cypress'/>
- describe('Social Links',()=>{
-     it('Navigate to website',()=>{
-         cy.visit('/');
+
+import SocialareaPO from "../../support/pageobjects/SocialareaPO";
+
+ describe('Social Area',()=>{
+     it ('Verify Social Area text', ()=>{
+       cy.visit('/');
+       const socialareapo = new SocialareaPO
+       socialareapo.verifySocialArea();
      })
-     
+
      it('Navigation to Facebook should be successful',()=>{
         cy.visit(Cypress.env('facebookUrl'));
         cy.url().should('include', 'facebook.com/nopCommerce')
