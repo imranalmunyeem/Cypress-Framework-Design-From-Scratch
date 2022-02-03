@@ -4,6 +4,7 @@
     "baseUrl": "https://demo.nopcommerce.com/",
 
     "env":{
+        "homepageUrl":"https://demo.nopcommerce.com/",
         "registrationUrl":"https://demo.nopcommerce.com/register?",
         "loginUrl": "https://demo.nopcommerce.com/login",
         
@@ -30,6 +31,14 @@
         "facebookUrl": "https://www.facebook.com/nopCommerce",
         "twitterUrl": "https://twitter.com/nopCommerce",
         "rssUrl": "https://demo.nopcommerce.com/news/rss/1",
-        "youtubeUrl": "https://www.youtube.com/user/nopCommerce"
+        "youtubeUrl": "https://www.youtube.com/user/nopCommerce",
+
+
+        "sitemapUrl":"https://demo.nopcommerce.com/sitemap",
+        "shippingandreturnUrl": "https://demo.nopcommerce.com/shipping-returns",
+        "privacyUrl": "https://demo.nopcommerce.com/privacy-notice",
+        "conditionsUrl": "https://demo.nopcommerce.com/conditions-of-use",
+        "aboutusUrl": "https://demo.nopcommerce.com/about-us",
+        "contactusUrl": "https://demo.nopcommerce.com/about-us"
     }
 }
