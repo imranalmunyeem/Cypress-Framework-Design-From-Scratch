@@ -1,4 +1,5 @@
-//.....................................Login Command.......................................................//
+///<reference types ='cypress'/>
+//.....................................Frontend Login Command.......................................................//
 Cypress.Commands.add('login', (email, password) => {
     cy.visit(Cypress.env('loginUrl'));
     cy.url().should('include','login');
@@ -20,7 +21,7 @@ Cypress.Commands.add('login', (email, password) => {
 })
 
 
-//........................................Logout Command.......................................................//
+//........................................Frontend Logout Command.......................................................//
 Cypress.Commands.add('logout', ()=>{
     const clickOnLogout = cy.get('.ico-logout');
     clickOnLogout.should('be.visible');
@@ -36,3 +37,18 @@ cy.get('.item-grid').find('.product-item').then(list => {
    });
 });
 
+//-----------------------------------------------ADMIN-----------------------------------------------------//
+//--------------------------------------------Admin Login Command-----------------------------------------//
+Cypress.Commands.add('loginToAdmin',(email,password)=>{
+    cy.visit(Cypress.env('adminLoginUrl'));
+    cy.url().should('include','login');
+    const adminLogin = ('#Email');
+    adminLogin.should('be.visible');
+    adminLogin.clear();
+    adminLogin.type(email);
+
+    const adminPassword = ('#Password');
+    adminPassword.should('be.visible');
+    adminPassword.clear();
+    adminPassword.type(password);
+})

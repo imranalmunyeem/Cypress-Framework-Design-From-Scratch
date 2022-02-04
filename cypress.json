@@ -39,6 +39,9 @@
         "privacyUrl": "https://demo.nopcommerce.com/privacy-notice",
         "conditionsUrl": "https://demo.nopcommerce.com/conditions-of-use",
         "aboutusUrl": "https://demo.nopcommerce.com/about-us",
-        "contactusUrl": "https://demo.nopcommerce.com/about-us"
+        "contactusUrl": "https://demo.nopcommerce.com/about-us",
+
+
+        "adminLoginUrl": "https://admin-demo.nopcommerce.com/login"
     }
 }
