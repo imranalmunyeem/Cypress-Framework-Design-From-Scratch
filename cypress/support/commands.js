@@ -1,4 +1,7 @@
 ///<reference types ='cypress'/>
+
+//----------------------------------------------Pluguins-----------------------------------------------------//
+import 'cypress-iframe';
 //.....................................Frontend Login Command.......................................................//
 Cypress.Commands.add('login', (email, password) => {
     cy.visit(Cypress.env('loginUrl'));
@@ -38,17 +41,33 @@ cy.get('.item-grid').find('.product-item').then(list => {
 });
 
 //-----------------------------------------------ADMIN-----------------------------------------------------//
-//--------------------------------------------Admin Login Command-----------------------------------------//
-Cypress.Commands.add('loginToAdmin',(email,password)=>{
+//--------------------------------------------Admin Login+LogoutCommand-----------------------------------------//
+Cypress.Commands.add('adminLogin',(email,password)=>{
     cy.visit(Cypress.env('adminLoginUrl'));
     cy.url().should('include','login');
-    const adminLogin = ('#Email');
-    adminLogin.should('be.visible');
-    adminLogin.clear();
-    adminLogin.type(email);
+    const adminEmail = cy.get('#Email');
+    adminEmail.should('be.visible');
+    adminEmail.clear();
+    adminEmail.type(email);
 
-    const adminPassword = ('#Password');
+    const adminPassword = cy.get('#Password');
     adminPassword.should('be.visible');
     adminPassword.clear();
     adminPassword.type(password);
+
+    const loginButton = cy.get('.button-1');
+    loginButton.should('be.visible');
+    loginButton.click();
+})
+
+Cypress.Commands.add('adminLogout',()=>{
+    const logoutButton = cy.get('.navbar-nav > :nth-child(3) > .nav-link');
+    logoutButton.should('be.visible');
+    logoutButton.click();
+})
+
+Cypress.Commands.add('adminLogout',()=>{
+    const logoutButton = cy.get('.navbar-nav > :nth-child(3) > .nav-link');
+    logoutButton.should('be.visible');
+    logoutButton.click();
 })

@@ -12,5 +12,8 @@
   "dependencies": {
     "chai": "^4.3.6",
     "cypress": "^9.3.1"
+  },
+  "devDependencies": {
+    "cypress-iframe": "^1.0.1"
   }
 }
