@@ -1,15 +1,35 @@
 ///<reference types = 'cypress'/>
-describe('Admin Login Area',()=>{
 
-    it('Login should be successful with valid credentials',()=>{
-        cy.adminLogin('admin@yourstore.com', 'admin');
-        cy.adminLogout();
+import AdminLoginPO from "../../support/pageobjects/Admin/AdminLoginPO";
+
+
+describe('Admin Login Area',()=>{
+    const adminloginpo = new AdminLoginPO();
+
+    beforeEach('Run before all it block',()=>{
+        cy.visit(Cypress.env('adminLoginUrl'));
+    });
+        
+
+    it('Login should be successful with valid credentials',()=>{   
+        adminloginpo.inputEmail('admin@yourstore.com');
+        adminloginpo.inputPassword('admin');
+        adminloginpo.clickOnLogin();
+        adminloginpo.clickOnLogout();
     })
 
     it('Login should not be successful with invalid credentials',()=>{
         cy.adminLogin('invalid@yourstore.com', 'invalid');
         const loginMessage = cy.get('.message-error');
         loginMessage.should('contain','Login was unsuccessful. Please correct the errors and try again.No customer account found');
+    })
+
+    it('Login should not be successful without credentials',()=>{
+        cy.get('#Email').clear();
+        cy.get('#Password').clear();
+        adminloginpo.clickOnLogin();
+        const emptyInputErrorMessage = cy.get('#Email-error');
+        emptyInputErrorMessage.should('contain','Please enter your email');
     })
 
 })

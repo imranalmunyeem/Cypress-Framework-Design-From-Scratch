@@ -1,12 +1,12 @@
-class AdminLogin{
-inputEmail(){
+class AdminLoginPO{
+inputEmail(email){
     const adminEmail = cy.get('#Email');
     adminEmail.should('be.visible');
     adminEmail.clear();
     adminEmail.type(email);
-}
+ }
 
-inputPassword(){
+inputPassword(password){
     const adminPassword = cy.get('#Password');
     adminPassword.should('be.visible');
     adminPassword.clear();
@@ -18,5 +18,10 @@ clickOnLogin(){
     loginButton.should('be.visible');
     loginButton.click();
 }
+
+clickOnLogout(){
+    const logout = cy.get('.navbar-nav > :nth-child(3) > .nav-link');
+    logout.click();
 }
-export default AdminLogin;
+}
+export default AdminLoginPO;
