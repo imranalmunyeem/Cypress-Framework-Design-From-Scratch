@@ -84,6 +84,12 @@ step 5: Custom scripts (Not Mandatory): Paste them on "package.json" file
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-merged-junit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-all-results-files": "rm -rf cypress/results/* || true"
+    
+
+# Cypress Retry Installation
+>Step 1: Run this on terminal: npm install --save-dev cypress-file-upload
+
+>Step 2 : Add this to cypress/support/commands.js: import 'cypress-file-upload';
 
 
 # Cypress Retry Installation
