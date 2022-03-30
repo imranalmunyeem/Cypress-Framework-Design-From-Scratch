@@ -43,6 +43,8 @@
 
 
         "adminLoginUrl": "https://admin-demo.nopcommerce.com/login",
-        "createProductUrl":"https://admin-demo.nopcommerce.com/Admin/Product/Create"
+        "createProductUrl":"https://admin-demo.nopcommerce.com/Admin/Product/Create",
+        "createCategoryUrl": "https://admin-demo.nopcommerce.com/Admin/Category/Create",
+        "categoryListUrl":"https://admin-demo.nopcommerce.com/Admin/Category/List"
     }
 }
