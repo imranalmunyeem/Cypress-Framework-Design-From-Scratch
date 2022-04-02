@@ -1,7 +1,9 @@
 ///<reference types = 'cypress'/>
 
-import CartPO from "../../support/pageobjects/CartPO";
-import SearchPO from "../../support/pageobjects/SearchPO";
+import SearchPO from "../../support/pageobjects/Frontend/SearchPO";
+import CartPO from "../../support/pageobjects/Frontend/CartPO";
+
+
 
 describe('Cart',()=>{
     it('Navigate to the website',()=>{
@@ -10,7 +12,7 @@ describe('Cart',()=>{
 
     it('Search for product',()=>{
         const searchpo = new SearchPO();
-       const inputProduct = searchpo.searchProduct('Fahrenheit 451 by Ray Bradbury');
+        const inputProduct = searchpo.searchProduct('Fahrenheit 451 by Ray Bradbury');
         searchpo.clickOnSearch();
     })
 
