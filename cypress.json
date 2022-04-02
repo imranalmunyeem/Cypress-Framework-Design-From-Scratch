@@ -7,6 +7,7 @@
         "homepageUrl":"https://demo.nopcommerce.com/",
         "registrationUrl":"https://demo.nopcommerce.com/register?",
         "loginUrl": "https://demo.nopcommerce.com/login",
+        "resetLoginPassword": "https://demo.nopcommerce.com/passwordrecovery",
         
         "desktopsUrl":"https://demo.nopcommerce.com/desktops",
         "notebooksUrl":"https://demo.nopcommerce.com/notebooks",
