@@ -41,6 +41,8 @@
         "conditionsUrl": "https://demo.nopcommerce.com/conditions-of-use",
         "aboutusUrl": "https://demo.nopcommerce.com/about-us",
         "contactusUrl": "https://demo.nopcommerce.com/contactus",
+        "newsUrl": "https://demo.nopcommerce.com/news",
+        "blogUrl": "https://demo.nopcommerce.com/blog",
 
 
         "adminLoginUrl": "https://admin-demo.nopcommerce.com/login",

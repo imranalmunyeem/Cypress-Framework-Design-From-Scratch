@@ -21,7 +21,7 @@ describe('Login', ()=>{
      });
   });
   
-  //---------------------------------------Login Field Verification----------------------------------------//
+  //---------------------------------------Contact Field Verification----------------------------------------//
   context('Contact fields verification',()=>{
     it('Your name field should contain "your name" keywords',()=>{
       contactpo.verifyYourNameField();
