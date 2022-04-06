@@ -1,0 +1,31 @@
+Mochawesome:
+
+Step 1: npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+
+step 2: Paste the following code in "reporter-config.json" file 
+{
+    "reporterEnabled": "spec, mocha-multi-reporterr",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "cypress/reports/junit/results-[hash].xml"
+    },
+  "reporter-options":{
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/results/mochawesome",
+      "quite": true,
+      "overwrite": false,
+      "html": false,
+      "json": true
+    }
+}
+}
+
+
+Step 3: To merge run the follwing in CL or make script:
+   "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json"
+
+Step: To Delete all run the follwing in CL or make script:
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+
+Step 5: Delete all and run again 
+    "cypress-regression-pack": "npm run delete-results && npm run delete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge"

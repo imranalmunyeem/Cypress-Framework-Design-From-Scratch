@@ -1,13 +1,29 @@
 {
   "name": "Nopcommerce-Ecommerce-Automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ecommerce website that contains various kinds of products including electronics, books, giftcards, and so on. Customers can order, gift, checkout, pay by different payment methods.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chrome",
+    "triggerAllTests-edge": "npx cypress run --browser edge",
+    "triggerAllTests-firefox": "npx cypress run --browser firefox",
+    "cypress-multi-browser": "npx cypress run --browser chrome --headed & npx cypress run --browser firefox --headed & npx cypress run --browser edge --headed",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 8c9b07c3-cba3-4e95-a866-46c76d61b857",
+    "triggerSpecificTests-Frontend": "npx cypress run --spec cypress/integration/1-frontend/*",
+    "triggerSpecificTests-Admin": "npx cypress run --spec cypress/integration/2-admin/*",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
+    "delete-results": "rm -rf cypress/results/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-separate-results": "rm -rf cypress/results/* || true",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "cypress-regression-pack": "npm run delete-results && npm run delete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge",
+    "cypress-retry": "CYPRESS_RETRIES=1 npm run triggerAllTests-headless"
   },
   "keywords": [],
-  "author": "",
+  "author": "IMRAN AL MUNYEEM",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.6"
@@ -15,6 +31,12 @@
   "devDependencies": {
     "cypress": "^9.5.2",
     "cypress-file-upload": "^5.0.8",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^9.2.2",
+    "mocha-junit-reporter": "^2.0.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

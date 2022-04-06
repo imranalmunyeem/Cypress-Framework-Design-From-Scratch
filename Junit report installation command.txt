@@ -1,0 +1,32 @@
+junit reporter:
+
+step 1:
+npm install --save-dev cypress-multi-reporters mocha-junit-reporter mocha
+
+
+Step 2: create a file named "reporter-config.json" and paste the code in the file given below:
+{
+    "reporterEnabled": "spec, mocha-junit-reporter",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "cypress/reports/junit/results-[hash].xml"
+    }
+  }
+
+
+Step 3: Paste below code in "cypress.json" file 
+{
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
+}
+
+
+Step 4: To merge the result run the following command:
+npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml
+
+
+step 5: Custom scripts (Not Mandatory): Paste them on "package.json" file
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-merged-junit-report": "rm -rf cypress/results/junit/results.xml",
+    "delete-all-results-files": "rm -rf cypress/results/* || true"
