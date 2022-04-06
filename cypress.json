@@ -48,6 +48,9 @@
         "adminLoginUrl": "https://admin-demo.nopcommerce.com/login",
         "createProductUrl":"https://admin-demo.nopcommerce.com/Admin/Product/Create",
         "createCategoryUrl": "https://admin-demo.nopcommerce.com/Admin/Category/Create",
-        "categoryListUrl":"https://admin-demo.nopcommerce.com/Admin/Category/List"
+        "categoryListUrl":"https://admin-demo.nopcommerce.com/Admin/Category/List",
+        "manufacturerListUrl": "https://admin-demo.nopcommerce.com/Admin/Manufacturer/List",
+        "createManufacturerUrl": "https://admin-demo.nopcommerce.com/Admin/Manufacturer/Create",
+        "productReviewsUrl": "https://admin-demo.nopcommerce.com/Admin/ProductReview/List"
     }
 }
