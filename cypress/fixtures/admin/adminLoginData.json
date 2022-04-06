@@ -1,4 +1,5 @@
 {
   "email": "admin@yourstore.com",
-  "password": "admin"
+  "password": "admin",
+  "invalid_email": "admin123@yourstore.com"
 }

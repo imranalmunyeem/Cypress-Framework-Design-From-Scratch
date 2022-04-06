@@ -6,6 +6,12 @@ describe('Login', ()=>{
 
   const loginpo = new LoginPO();
 
+  before(function(){
+    cy.fixture('/frontend/userLoginData.json').then(function(data){
+        globalThis.data = data;
+    });
+});
+
   beforeEach('Will run before each it block',()=>{
     cy.visit(Cypress.env('loginUrl'));
 });
@@ -36,14 +42,14 @@ describe('Login', ()=>{
   //---------------------------------------Login Verification----------------------------------------//
   context('Login feature verification',()=>{
     it('Login should be successful with valid credentials', ()=>{
-      loginpo.inputEmail('nforget32@gmail.com');
-      loginpo.inputPassword('123456');
+      loginpo.inputEmail(data.email);
+      loginpo.inputPassword(data.password);
       loginpo.clickOnLogin();
     });
 
     it('Login should not be successful with invalid credentials', ()=>{
-      loginpo.inputEmail('wrongemail');
-      loginpo.inputPassword('wrongpassword');
+      loginpo.inputEmail(data.invalid_email);
+      loginpo.inputPassword(data.invalid_password);
       loginpo.clickOnLogin();
         cy.get('#Email-error').should('contain','Wrong email');
       });
@@ -56,8 +62,8 @@ describe('Login', ()=>{
   //------------------------------------------Logout Verification ------------------------------------//
   context('Logout feature verification',()=>{
     it('Logging out should be successful after clicking on it', ()=>{
-      loginpo.inputEmail('nforget32@gmail.com');
-      loginpo.inputPassword('123456');
+      loginpo.inputEmail(data.email);
+      loginpo.inputPassword(data.password);
       loginpo.clickOnLogin();
       loginpo.clickOnLogout();
       loginpo.verifyLogout();

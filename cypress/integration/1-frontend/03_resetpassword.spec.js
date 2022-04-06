@@ -6,6 +6,12 @@ import ResetPasswordPO from "../../support/pageobjects/Frontend/ResetPasswordPO"
     
     const resetpasswordpo = new ResetPasswordPO();
 
+    before(function(){
+      cy.fixture('/frontend/resetData.json').then(function(data){
+          globalThis.data = data;
+      });
+  });
+
     beforeEach('Will run before each it block',()=>{
         cy.visit(Cypress.env('resetLoginPassword'));
     });
@@ -46,17 +52,17 @@ context('Required field verification',()=>{
    //---------------------------------------Reset feature Verification----------------------------------------//
 context('Reset feature verification',()=>{
     it('Resetting should be successful with existing email address"',()=>{
-      resetpasswordpo.inputResetEmail('nforget32@gmail.com');
+      resetpasswordpo.inputResetEmail(data.email);
       resetpasswordpo.clickOnRecover();
     });
 
     it('Resetting should not be successful with non-existing email address"',()=>{
-        resetpasswordpo.inputResetEmail('nforget32111@gmail.com');
+        resetpasswordpo.inputResetEmail(data.invalid_email);
         resetpasswordpo.clickOnRecover();
         resetpasswordpo.verifyNotFoundEmailAlert();
       });
 
-    it.only('Resetting should not be successful with empty email field submission"',()=>{
+    it('Resetting should not be successful with empty email field submission"',()=>{
         resetpasswordpo.clickOnRecover();
         resetpasswordpo.verifyEmptyEmailFieldAlert();
       });
