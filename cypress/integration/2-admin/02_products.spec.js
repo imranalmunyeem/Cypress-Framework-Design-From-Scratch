@@ -34,7 +34,7 @@ describe('Products Page',()=>{
             productspo.verifyProductAdditionSuccessAlert();
         });
 
-        it.only('Adding a new product should not be successful with empty input fields',()=>{
+        it('Adding a new product should not be successful with empty input fields',()=>{
             cy.visit(Cypress.env('createProductUrl'));
             productspo.clickOnSave();
             productspo.verifyProductAdditionUnsuccessAlert();

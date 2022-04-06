@@ -3,7 +3,7 @@
 import ProductReviewsPO from "../../support/pageobjects/Admin/ProductReviewsPO";
 
 
-describe('Manufacturer Page',()=>{
+describe('Product Reviews Page',()=>{
     //--------------------------------------Object of Page object Class--------------------------------//
     const productreviewspo = new ProductReviewsPO();
      
@@ -39,7 +39,7 @@ describe('Manufacturer Page',()=>{
         productreviewspo.clickOnSearch();
    });
 
-     it.only('Search should not provide correct result with invalid and non-existing values',()=>{
+     it('Search should not provide correct result with invalid and non-existing values',()=>{
       cy.visit(Cypress.env('productReviewsUrl'));
       productreviewspo.inputCreatedFromDate('02/01/2022');
       productreviewspo.inputCreatedToDate('05/04/2022');

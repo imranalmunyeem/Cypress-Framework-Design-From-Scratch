@@ -49,7 +49,7 @@ describe('Manufacturer Page',()=>{
 
     //---------------------------------------Add Manufacturer Verification----------------------------------------//
     context('Add Manufacturer verification',()=>{
-     it.only('Adding manufacturer should be successful with valid input fields',()=>{
+     it('Adding manufacturer should be successful with valid input fields',()=>{
       cy.visit(Cypress.env('createManufacturerUrl'));
       manufacturerspo.inputManufacturerName('Asus')
       //manufacturerspo.inputDisplayOrder('2');

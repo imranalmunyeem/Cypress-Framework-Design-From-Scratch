@@ -51,6 +51,12 @@
         "categoryListUrl":"https://admin-demo.nopcommerce.com/Admin/Category/List",
         "manufacturerListUrl": "https://admin-demo.nopcommerce.com/Admin/Manufacturer/List",
         "createManufacturerUrl": "https://admin-demo.nopcommerce.com/Admin/Manufacturer/Create",
-        "productReviewsUrl": "https://admin-demo.nopcommerce.com/Admin/ProductReview/List"
+        "productReviewsUrl": "https://admin-demo.nopcommerce.com/Admin/ProductReview/List",
+        "productTagsUrl": "https://admin-demo.nopcommerce.com/Admin/Product/ProductTags",
+        "productAttributeUrl": "https://admin-demo.nopcommerce.com/Admin/ProductAttribute/List",
+        "createProductAttributeUrl": "https://admin-demo.nopcommerce.com/Admin/ProductAttribute/Create",
+        "createSpecificAttributeUrl": "https://admin-demo.nopcommerce.com/Admin/SpecificationAttribute/CreateSpecificationAttribute",
+        "createSpecificGroupAttributeUrl": "https://admin-demo.nopcommerce.com/Admin/SpecificationAttribute/CreateSpecificationAttributeGroup",
+        "createCheckoutAttributeUrl": "https://admin-demo.nopcommerce.com/Admin/CheckoutAttribute/Create"
     }
 }
